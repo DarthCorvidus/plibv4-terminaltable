@@ -1,9 +1,16 @@
 <?php
 class TerminalTable {
 	private $model;
-	private $longest;
+	private $modelLayout;
 	function __construct(TerminalTableModel $model) {
 		$this->model = $model;
+		if($this->model instanceof TerminalTableLayout) {
+			$this->modelLayout = $layout;
+		}
+	}
+	
+	function setLayout(TerminalTableLayout $layout) {
+		$this->modelLayout = $layout;
 	}
 
 	public function getLongestStrings(): LongestStrings {
@@ -24,7 +31,11 @@ class TerminalTable {
 	function getCell($col, $row, LongestStrings $longest): string {
 		$str = $this->model->getCell($col, $row);
 		$pad = $longest->getItem($col)->getLength()- mb_strlen($str);
-		$cell = $str.str_repeat(" ", $pad);
+		if($this->modelLayout!==NULL and $this->modelLayout->getCellJustify($col, $row)=== TerminalTableLayout::RIGHT) {
+			$cell = str_repeat(" ", $pad).$str;
+		} else {
+			$cell = $str.str_repeat(" ", $pad);
+		}
 	return $cell;
 	}
 	

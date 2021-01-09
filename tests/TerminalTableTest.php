@@ -27,6 +27,15 @@ class TerminalTableTest extends TestCase {
 		}
 	return $lines;
 	}
+
+	function getLinesJustify() {
+		$handle = fopen("./tests/ls-justify.txt", "r");
+		while($line = fgets($handle)) {
+			$lines[] = trim($line);
+		}
+	return $lines;
+	}
+
 	
 	function testGetLongestStringsCount() {
 		$this->model->load();
@@ -86,4 +95,10 @@ class TerminalTableTest extends TestCase {
 		$this->assertEquals($txt[6], $csv[6]);
 	}
 
+	function testJustify() {
+		$this->table->setLayout(new TerminalTableJustify());
+		$txt = $this->getLinesJustify();
+		$csv = $this->table->getLines();
+		$this->assertEquals($txt, $csv);
+	}
 }
