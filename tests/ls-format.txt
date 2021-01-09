@@ -1,0 +1,7 @@
+Mode       Links User Group Size  Month Day Time  Name    Test
+-rw-r--r-- 1     hm   hm    26526 Jan   6   13:45 LICENSE Test
+-rw-r--r-- 1     hm   hm    406   Jan   6   15:55 README  Test
+drwxr-xr-x 2     hm   hm    4096  Jan   6   14:13 src     Test
+drwxr-xr-x 2     hm   hm    4096  Jan   6   14:17 tests   Test
+-rwxr--r-- 1     hm   hm    62    Jan   6   13:46 test.sh Test
+-rw-r--r-- 1     hm   hm    0     Jan   6   15:55 Krähe   Test
