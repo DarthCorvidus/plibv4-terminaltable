@@ -1,18 +1,44 @@
 <?php
+/**
+ * @copyright (c) 2021, Claus-Christoph Küthe
+ * @author Claus-Christoph Küthe <plibv4@vm01.telton.de>
+ * @license LGPLv2.1
+ */
 class TerminalTable {
 	private $model;
 	private $modelLayout;
+	/**
+	 * Construct a TerminalTable
+	 * 
+	 * Note that TerminalTable will automatically use your model as layout if it
+	 * implements TerminalTableLayout as well.
+	 * @param TerminalTableModel $model
+	 */
 	function __construct(TerminalTableModel $model) {
 		$this->model = $model;
 		if($this->model instanceof TerminalTableLayout) {
-			$this->modelLayout = $layout;
+			$this->modelLayout = $model;
 		}
 	}
 	
+	/**
+	 * Set Layout
+	 * 
+	 * If you want to keep Layout & Model separate, you can set a layout using
+	 * another instance.
+	 * @param TerminalTableLayout $layout
+	 */
 	function setLayout(TerminalTableLayout $layout) {
 		$this->modelLayout = $layout;
 	}
-
+	
+	/**
+	 * Return LongestStrings
+	 * 
+	 * Returns an instance of LongestStrings whose instance of LongestString
+	 * contain the maximum string length for each column.
+	 * @return LongestStrings
+	 */
 	public function getLongestStrings(): LongestStrings {
 		$longest = new LongestStrings($this->model->getColumns());
 		if($this->model->hasTitle()) {
@@ -28,6 +54,16 @@ class TerminalTable {
 	return $longest;
 	}
 	
+	/**
+	 * Get specific cell
+	 * 
+	 * Gets a specific cell as identified by column and row number. String will
+	 * be justified and have color & attributes [not done yet].
+	 * @param type $col
+	 * @param type $row
+	 * @param LongestStrings $longest
+	 * @return string
+	 */
 	function getCell($col, $row, LongestStrings $longest): string {
 		$str = $this->model->getCell($col, $row);
 		$pad = $longest->getItem($col)->getLength()- mb_strlen($str);
@@ -39,6 +75,12 @@ class TerminalTable {
 	return $cell;
 	}
 	
+	/**
+	 * Get table lines
+	 * 
+	 * Get properly positioned table columns as an array of lines.
+	 * @return array
+	 */
 	function getLines(): array {
 		$this->model->load();
 		$lines = array();
