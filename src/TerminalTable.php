@@ -54,6 +54,22 @@ class TerminalTable {
 	return $longest;
 	}
 	
+	private function getColorAttr(string $str, int $col, int $row): string {
+		/**
+		 * empty strings do not need colors or attributes
+		 */
+		if($str==="") {
+			return "";
+		}
+		$vtc = new VTC();
+		$fore = $this->modelLayout->getCellFore($col, $row);
+		$vtc->setForeground($this->modelLayout->getCellFore($col, $row));
+		$vtc->setBackground($this->modelLayout->getCellBack($col, $row));
+		$vtc->setAttributes($this->modelLayout->getCellAttr($col, $row));
+		$colorized = $vtc->getACString($str);
+	return $colorized;
+	}
+	
 	/**
 	 * Get specific cell
 	 * 
@@ -67,10 +83,19 @@ class TerminalTable {
 	function getCell($col, $row, LongestStrings $longest): string {
 		$str = $this->model->getCell($col, $row);
 		$pad = $longest->getItem($col)->getLength()- mb_strlen($str);
-		if($this->modelLayout!==NULL and $this->modelLayout->getCellJustify($col, $row)=== TerminalTableLayout::RIGHT) {
-			$cell = str_repeat(" ", $pad).$str;
+		/*
+		 * If there is no layout, we can branch out early.
+		 */
+		if($this->modelLayout===NULL) {
+			return $str.str_repeat(" ", $pad);
+		}
+		
+		$colorized = $this->getColorAttr($str, $col, $row);
+		
+		if($this->modelLayout->getCellJustify($col, $row)=== TerminalTableLayout::RIGHT) {
+			$cell = str_repeat(" ", $pad).$colorized;
 		} else {
-			$cell = $str.str_repeat(" ", $pad);
+			$cell = $colorized.str_repeat(" ", $pad);
 		}
 	return $cell;
 	}

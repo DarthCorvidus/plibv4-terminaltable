@@ -20,6 +20,18 @@ class TerminalTableTest extends TestCase {
 		$this->table = new TerminalTable($this->model);
 	}
 	
+	static function hex($string) {
+		$new = "";
+		for($i=0;$i<strlen($string);$i++) {
+			if($string[$i]==chr(27)) {
+				$new .= "0x27";
+				continue;
+			}
+			$new .= $string[$i];
+		}
+	return $new;
+	}
+
 	function getLines() {
 		$handle = fopen("./tests/ls.txt", "r");
 		while($line = fgets($handle)) {
@@ -101,4 +113,42 @@ class TerminalTableTest extends TestCase {
 		$csv = $this->table->getLines();
 		$this->assertEquals($txt, $csv);
 	}
+	
+	function testJustifySingleCellNoColor() {
+		$this->table->setLayout(new TerminalTableJustify());
+		$txt = $this->getLinesJustify();
+		$csv = $this->table->getLines();
+		$longest = $this->table->getLongestStrings();
+		$this->assertEquals(self::hex("src    "), self::hex($this->table->getCell(8, 2, $longest)));
+
+	}
+	
+	function testColor() {
+		$this->model->load();
+		$this->table->setLayout(new TerminalTableColor());
+		$longest = $this->table->getLongestStrings();
+		$vtc = new VTC();
+		$vtc->setForeground(VTC::GREEN);
+		$this->assertEquals($vtc->getACString("src")."    ", $this->table->getCell(8, 2, $longest));
+	}
+	
+	function testBackground() {
+		$this->model->load();
+		$this->table->setLayout(new TerminalTableColor());
+		$longest = $this->table->getLongestStrings();
+		$vtc = new VTC();
+		$vtc->setBackground(VTC::GREEN);
+		$this->assertEquals($vtc->getACString("README")." ", $this->table->getCell(8, 1, $longest));
+	}
+	
+	function testAttributes() {
+		$this->model->load();
+		$this->table->setLayout(new TerminalTableColor());
+		$longest = $this->table->getLongestStrings();
+		$vtc = new VTC();
+		$vtc->setAttributes(array(VTC::DIM, VTC::UNDERSCORE));
+		$this->assertEquals($vtc->getACString("LICENSE"), $this->table->getCell(8, 0, $longest));
+	}
+
+
 }
