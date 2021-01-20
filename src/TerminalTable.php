@@ -132,4 +132,8 @@ class TerminalTable {
 		}
 	return $lines;
 	}
+	
+	function printTable() {
+		echo implode(PHP_EOL, $this->getLines());
+	}
 }

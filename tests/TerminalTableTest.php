@@ -47,6 +47,10 @@ class TerminalTableTest extends TestCase {
 		}
 	return $lines;
 	}
+	
+	function getString() {
+		return file_get_contents("./tests/ls.txt");
+	}
 
 	
 	function testGetLongestStringsCount() {
@@ -107,12 +111,19 @@ class TerminalTableTest extends TestCase {
 		$this->assertEquals($txt[6], $csv[6]);
 	}
 
+	function testPrintTable() {
+		$this->expectOutputString($this->getString());
+		$this->table->printTable();
+	}
+
+	
 	function testJustify() {
 		$this->table->setLayout(new TerminalTableJustify());
 		$txt = $this->getLinesJustify();
 		$csv = $this->table->getLines();
 		$this->assertEquals($txt, $csv);
 	}
+	
 	
 	function testJustifySingleCellNoColor() {
 		$this->table->setLayout(new TerminalTableJustify());
