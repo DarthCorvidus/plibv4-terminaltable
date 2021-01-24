@@ -1,0 +1,29 @@
+{
+	"minimum-stability": "dev",
+	"repositories": [
+		{
+			"type": "path",
+			"url": "/home/hm/NetBeansProjects/plibv4/plibv4-vtc",
+			"options": {
+				"symlink": false
+			}
+		},
+		{
+			"type": "path",
+			"url": "/home/hm/NetBeansProjects/plibv4/plibv4-longeststring",
+			"options": {
+				"symlink": false
+			}
+		}
+
+	],
+	"name": "plibv4/terminaltable",
+	"require": {
+			"plibv4/vtc": "dev-main",
+			"plibv4/longeststring": "dev-main"
+	},
+	"autoload": {
+        "classmap": ["src/"]
+    }
+
+}
