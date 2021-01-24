@@ -2,9 +2,6 @@
 require './src/TerminalTableModel.php';
 require './src/TerminalTableLayout.php';
 require './src/TerminalTable.php';
-require './tests/TerminalTableDemo.php';
-require './tests/TerminalTableJustify.php';
-require './tests/TerminalTableColor.php';
 if(file_exists("./vendor/autoload.php")) {
 	require "./vendor/autoload.php";
 } else {
