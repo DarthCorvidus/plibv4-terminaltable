@@ -29,7 +29,7 @@ class TerminalTableDemo implements TerminalTableModel {
 	public function load() {
 		$this->values = array();
 		$this->title = array();
-		$handle = fopen("./tests/csv.txt", "r");
+		$handle = fopen(__DIR__."/csv.txt", "r");
 		$i=0;
 		while($array = fgetcsv($handle, 0, ";")) {
 			if($i==0) {

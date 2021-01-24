@@ -36,7 +36,7 @@ class TerminalTableTest extends TestCase {
 	}
 
 	function getLines() {
-		$handle = fopen("./tests/ls.txt", "r");
+		$handle = fopen(__DIR__."/ls.txt", "r");
 		while($line = fgets($handle)) {
 			$lines[] = trim($line);
 		}
@@ -44,7 +44,7 @@ class TerminalTableTest extends TestCase {
 	}
 
 	function getLinesJustify() {
-		$handle = fopen("./tests/ls-justify.txt", "r");
+		$handle = fopen(__DIR__."/ls-justify.txt", "r");
 		while($line = fgets($handle)) {
 			$lines[] = trim($line);
 		}
@@ -52,7 +52,7 @@ class TerminalTableTest extends TestCase {
 	}
 	
 	function getString() {
-		return file_get_contents("./tests/ls.txt");
+		return file_get_contents(__DIR__."/ls.txt");
 	}
 
 	
