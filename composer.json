@@ -2,20 +2,13 @@
 	"minimum-stability": "dev",
 	"repositories": [
 		{
-			"type": "path",
-			"url": "/home/hm/NetBeansProjects/plibv4/plibv4-vtc",
-			"options": {
-				"symlink": false
-			}
+			"type": "vcs",
+			"url": "https://github.com/DarthCorvidus/plibv4-vtc"
 		},
 		{
-			"type": "path",
-			"url": "/home/hm/NetBeansProjects/plibv4/plibv4-longeststring",
-			"options": {
-				"symlink": false
-			}
+			"type": "vcs",
+			"url": "https://github.com/DarthCorvidus/plibv4-longeststring"
 		}
-
 	],
 	"name": "plibv4/terminaltable",
 	"require": {
