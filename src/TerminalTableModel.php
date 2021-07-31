@@ -13,7 +13,7 @@ interface TerminalTableModel {
 	 * @param type $col Column
 	 * @param type $row Row
 	 */
-	function getCell($col, $row): string;
+	function getCell(int $col, int $row): string;
 	
 	/**
 	 * Load data
@@ -55,5 +55,5 @@ interface TerminalTableModel {
 	 * called if hasTitle returns FALSE.
 	 * @param string $col
 	 */
-	function getTitle($col): string;
+	function getTitle(int $col): string;
 }
