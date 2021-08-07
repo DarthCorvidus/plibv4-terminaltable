@@ -52,7 +52,7 @@ class TerminalTableTest extends TestCase {
 	}
 	
 	function getString() {
-		return file_get_contents(__DIR__."/ls.txt");
+		return file_get_contents(__DIR__."/ls.txt").PHP_EOL;
 	}
 
 	

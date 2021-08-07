@@ -139,6 +139,6 @@ class TerminalTable {
 	 * Prints table directly to STDOUT
 	 */
 	function printTable() {
-		echo implode(PHP_EOL, $this->getLines());
+		echo implode(PHP_EOL, $this->getLines()).PHP_EOL;
 	}
 }
