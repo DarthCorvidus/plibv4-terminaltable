@@ -18,7 +18,7 @@ require 'TerminalTableColor.php';
 class TerminalTableTest extends TestCase {
 	private $model;
 	private $table;
-	function setUp() {
+	function setUp(): void {
 		$this->model = new TerminalTableDemo();
 		$this->table = new TerminalTable($this->model);
 	}
