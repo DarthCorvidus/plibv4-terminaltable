@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
  */
 class TerminalTableDemoTest extends TestCase {
 	private $model;
-	function setUp() {
+	function setUp(): void {
 		$this->model = new TerminalTableDemo();
 		$this->model->load();
 	}
