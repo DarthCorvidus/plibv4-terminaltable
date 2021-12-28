@@ -3,11 +3,13 @@
 	"repositories": [
 		{
 			"type": "vcs",
-			"url": "https://github.com/DarthCorvidus/plibv4-vtc"
+			"url": "https://github.com/DarthCorvidus/plibv4-vtc",
+			"no-api": true
 		},
 		{
 			"type": "vcs",
-			"url": "https://github.com/DarthCorvidus/plibv4-longeststring"
+			"url": "https://github.com/DarthCorvidus/plibv4-longeststring",
+			"no-api": true
 		}
 	],
 	"name": "plibv4/terminaltable",
