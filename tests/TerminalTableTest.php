@@ -118,6 +118,10 @@ class TerminalTableTest extends TestCase {
 		$this->expectOutputString($this->getString());
 		$this->table->printTable();
 	}
+	
+	function testGetString() {
+		$this->assertEquals($this->getString(), $this->table->getString());
+	}
 
 	
 	function testJustify() {

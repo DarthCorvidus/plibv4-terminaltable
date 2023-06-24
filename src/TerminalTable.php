@@ -141,4 +141,13 @@ class TerminalTable {
 	function printTable() {
 		echo implode(PHP_EOL, $this->getLines()).PHP_EOL;
 	}
+	
+	/**
+	 * Get String
+	 * 
+	 * Get table as string.
+	 */
+	function getString(): string {
+		return implode(PHP_EOL, $this->getLines()).PHP_EOL;
+	}
 }
