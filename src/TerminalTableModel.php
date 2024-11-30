@@ -10,8 +10,8 @@ interface TerminalTableModel {
 	 * 
 	 * Gets a specific cell as indexed by column and row. Please note that both
 	 * are supposed to be 0-indexed.
-	 * @param type $col Column
-	 * @param type $row Row
+	 * @param int $col Column
+	 * @param int $row Row
 	 */
 	function getCell(int $col, int $row): string;
 	
@@ -53,7 +53,7 @@ interface TerminalTableModel {
 	 * 
 	 * Get a specific title for a column. Please note that getTitle won't be
 	 * called if hasTitle returns FALSE.
-	 * @param string $col
+	 * @param int $col
 	 */
 	function getTitle(int $col): string;
 }
