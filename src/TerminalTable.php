@@ -5,8 +5,8 @@
  * @license LGPLv2.1
  */
 class TerminalTable {
-	private $model;
-	private $modelLayout;
+	private TerminalTableModel $model;
+	private ?TerminalTableLayout $modelLayout = null;
 	/**
 	 * Construct a TerminalTable
 	 * 
@@ -17,7 +17,7 @@ class TerminalTable {
 	function __construct(TerminalTableModel $model) {
 		$this->model = $model;
 		if($this->model instanceof TerminalTableLayout) {
-			$this->modelLayout = $model;
+			$this->setLayout($this->model);
 		}
 	}
 	
@@ -28,7 +28,7 @@ class TerminalTable {
 	 * another instance.
 	 * @param TerminalTableLayout $layout
 	 */
-	function setLayout(TerminalTableLayout $layout) {
+	function setLayout(TerminalTableLayout $layout): void {
 		$this->modelLayout = $layout;
 	}
 	
@@ -55,6 +55,10 @@ class TerminalTable {
 	}
 	
 	private function getColorAttr(string $str, int $col, int $row): string {
+		if($this->modelLayout===null) {
+			// should not happen.
+			throw new \RuntimeException("no layout model set");
+		}
 		/**
 		 * empty strings do not need colors or attributes
 		 */
@@ -62,7 +66,6 @@ class TerminalTable {
 			return "";
 		}
 		$vtc = new VTC();
-		$fore = $this->modelLayout->getCellFore($col, $row);
 		$vtc->setForeground($this->modelLayout->getCellFore($col, $row));
 		$vtc->setBackground($this->modelLayout->getCellBack($col, $row));
 		$vtc->setAttributes($this->modelLayout->getCellAttr($col, $row));
@@ -75,12 +78,12 @@ class TerminalTable {
 	 * 
 	 * Gets a specific cell as identified by column and row number. String will
 	 * be justified and have color & attributes [not done yet].
-	 * @param type $col
-	 * @param type $row
+	 * @param int $col
+	 * @param int $row
 	 * @param LongestStrings $longest
 	 * @return string
 	 */
-	function getCell($col, $row, LongestStrings $longest): string {
+	function getCell(int $col, int $row, LongestStrings $longest): string {
 		$str = $this->model->getCell($col, $row);
 		$pad = $longest->getItem($col)->getLength()- mb_strlen($str);
 		/*
@@ -104,7 +107,7 @@ class TerminalTable {
 	 * Get table lines
 	 * 
 	 * Get properly positioned table columns as an array of lines.
-	 * @return array
+	 * @return list<string>
 	 */
 	function getLines(): array {
 		$this->model->load();
@@ -138,7 +141,7 @@ class TerminalTable {
 	 * 
 	 * Prints table directly to STDOUT
 	 */
-	function printTable() {
+	function printTable(): void {
 		echo implode(PHP_EOL, $this->getLines()).PHP_EOL;
 	}
 	

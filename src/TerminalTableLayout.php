@@ -56,6 +56,7 @@ interface TerminalTableLayout {
 	 * Get array of attributes.
 	 * @param int $col
 	 * @param int $row
+	 * @return list<int> Description
 	 */
 	function getCellAttr(int $col, int $row): array;
 }

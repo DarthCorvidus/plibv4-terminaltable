@@ -23,7 +23,7 @@ interface TerminalTableModel {
 	 * redrawn. You should cache or clear data, in order to prevent long loading
 	 * times or a growing number of repeating values.
 	 */
-	function load();
+	function load(): void;
 	
 	/**
 	 * Get columns

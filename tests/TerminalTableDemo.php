@@ -26,7 +26,7 @@ class TerminalTableDemo implements TerminalTableModel {
 		return true;
 	}
 
-	public function load() {
+	public function load(): void {
 		$this->values = array();
 		$this->title = array();
 		$handle = fopen(__DIR__."/csv.txt", "r");

@@ -21,15 +21,17 @@
         "classmap": ["src/"]
     },
 	"require-dev": {
-		"phpunit/phpunit": "^7"
+		"vimeo/psalm": "6.x-dev",
+		"phpunit/phpunit": "9.6.x-dev"
 	},
 	"scripts": {
 		"test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests",
-		"testdox": "./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox --colors=always tests"
+		"testdox": "./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox --colors=always tests",
+		"psalm": "./vendor/bin/psalm --show-info=true --no-cache"
 	},
 	"config": {
 		"platform": {
-			"php": "7.3"
+			"php": "8.2"
 		}
 	}
 }
