@@ -4,12 +4,12 @@ class TerminalTableJustify implements TerminalTableLayout {
 		return array();
 	}
 
-	public function getCellBack(int $col, int $row): int {
-		return 0;
+	public function getCellBack(int $col, int $row): VTCColor {
+		return VTCColor::RESET;
 	}
 
-	public function getCellFore(int $col, int $row): int {
-		return 0;
+	public function getCellFore(int $col, int $row): VTCColor {
+		return VTCColor::RESET;
 	}
 
 	public function getCellJustify(int $col, int $row): int {

@@ -7,20 +7,6 @@
 interface TerminalTableLayout {
 	const LEFT = 1;
 	const RIGHT = 2;
-	const RESET = VTC::RESET;
-	const BRIGHT = VTC::BRIGHT;
-	const DIM = VTC::DIM;
-	const UNDERSCORE = VTC::UNDERSCORE;
-	const BLINK = VTC::BLINK;
-	const HIDDEN = VTC::HIDDEN;
-	const BLACK = VTC::BLACK;
-	const RED = VTC::RED;
-	const GREEN = VTC::GREEN;
-	const YELLOW = VTC::YELLOW;
-	const BLUE = VTC::BLUE;
-	const MAGENTA = VTC::MAGENTA;
-	const CYAN = VTC::CYAN;
-	const WHITE = VTC::WHITE;
 	/**
 	 * Get cell justify
 	 * 
@@ -33,22 +19,22 @@ interface TerminalTableLayout {
 	/**
 	 * Get foreground color
 	 * 
-	 * Get color value to determine foreground color; use VTC::RESET to keep
+	 * Get color value to determine foreground color; use VTCColor::Reset to keep
 	 * default.
 	 * @param int $col
 	 * @param int $row
 	 */
-	function getCellFore(int $col, int $row): int;
+	function getCellFore(int $col, int $row): VTCColor;
 
 	/**
 	 * Get background color
 	 * 
-	 * Get color value to determine background color; use VTC::RESET to keep
+	 * Get color value to determine background color; use VTCColor::RESET to keep
 	 * default.
 	 * @param int $col
 	 * @param int $row
 	 */
-	function getCellBack(int $col, int $row): int;
+	function getCellBack(int $col, int $row): VTCColor;
 	
 	/**
 	 * Get attributes
@@ -56,7 +42,7 @@ interface TerminalTableLayout {
 	 * Get array of attributes.
 	 * @param int $col
 	 * @param int $row
-	 * @return list<int> Description
+	 * @return list<VTCAttribute> Description
 	 */
 	function getCellAttr(int $col, int $row): array;
 }

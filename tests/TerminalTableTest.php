@@ -146,7 +146,7 @@ class TerminalTableTest extends TestCase {
 		$this->table->setLayout(new TerminalTableColor());
 		$longest = $this->table->getLongestStrings();
 		$vtc = new VTC();
-		$vtc->setForeground(VTC::GREEN);
+		$vtc->setForeground(VTCColor::GREEN);
 		$this->assertEquals($vtc->getACString("src")."    ", $this->table->getCell(8, 2, $longest));
 	}
 	
@@ -155,7 +155,7 @@ class TerminalTableTest extends TestCase {
 		$this->table->setLayout(new TerminalTableColor());
 		$longest = $this->table->getLongestStrings();
 		$vtc = new VTC();
-		$vtc->setBackground(VTC::GREEN);
+		$vtc->setBackground(VTCColor::GREEN);
 		$this->assertEquals($vtc->getACString("README")." ", $this->table->getCell(8, 1, $longest));
 	}
 	
@@ -164,7 +164,7 @@ class TerminalTableTest extends TestCase {
 		$this->table->setLayout(new TerminalTableColor());
 		$longest = $this->table->getLongestStrings();
 		$vtc = new VTC();
-		$vtc->setAttributes(array(VTC::DIM, VTC::UNDERSCORE));
+		$vtc->setAttributes(array(VTCAttribute::DIM, VTCAttribute::UNDERSCORE));
 		$this->assertEquals($vtc->getACString("LICENSE"), $this->table->getCell(8, 0, $longest));
 	}
 
