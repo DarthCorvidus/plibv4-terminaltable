@@ -5,8 +5,6 @@
  * @license LGPLv2.1
  */
 interface TerminalTableLayout {
-	const LEFT = 1;
-	const RIGHT = 2;
 	/**
 	 * Get cell justify
 	 * 
@@ -14,7 +12,7 @@ interface TerminalTableLayout {
 	 * @param int $col
 	 * @param int $row
 	 */
-	function getCellJustify(int $col, int $row): int;
+	function getCellJustify(int $col, int $row): TerminalTableJustify;
 
 	/**
 	 * Get foreground color

@@ -95,7 +95,7 @@ final class TerminalTable {
 		
 		$colorized = $this->getColorAttr($str, $col, $row);
 		
-		if($this->modelLayout->getCellJustify($col, $row)=== TerminalTableLayout::RIGHT) {
+		if($this->modelLayout->getCellJustify($col, $row)=== TerminalTableJustify::RIGHT) {
 			$cell = str_repeat(" ", $pad).$colorized;
 		} else {
 			$cell = $colorized.str_repeat(" ", $pad);

@@ -21,8 +21,8 @@ class ExampleColor implements TerminalTableLayout {
 		return VTCColor::RESET;
 	}
 
-	public function getCellJustify(int $col, int $row): int {
-		return self::LEFT;
+	public function getCellJustify(int $col, int $row): TerminalTableJustify {
+		return TerminalTableJustify::LEFT;
 	}
 
 }

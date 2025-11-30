@@ -12,11 +12,11 @@ class ExampleJustify implements TerminalTableLayout {
 		return VTCColor::RESET;
 	}
 
-	public function getCellJustify(int $col, int $row): int {
+	public function getCellJustify(int $col, int $row): TerminalTableJustify {
 		if(in_array($col, array(1, 4, 6))) {
-			return self::RIGHT;
+			return TerminalTableJustify::RIGHT;
 		}
-		return self::LEFT;
+		return TerminalTableJustify::LEFT;
 	}
 
 }
