@@ -3,7 +3,7 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 require 'TerminalTableDemo.php';
 require 'ExampleJustify.php';
-require 'TerminalTableColor.php';
+require 'ExampleColor.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -143,7 +143,7 @@ class TerminalTableTest extends TestCase {
 	
 	function testColor() {
 		$this->model->load();
-		$this->table->setLayout(new TerminalTableColor());
+		$this->table->setLayout(new ExampleColor());
 		$longest = $this->table->getLongestStrings();
 		$vtc = new VTC();
 		$vtc->setForeground(VTCColor::GREEN);
@@ -152,7 +152,7 @@ class TerminalTableTest extends TestCase {
 	
 	function testBackground() {
 		$this->model->load();
-		$this->table->setLayout(new TerminalTableColor());
+		$this->table->setLayout(new ExampleColor());
 		$longest = $this->table->getLongestStrings();
 		$vtc = new VTC();
 		$vtc->setBackground(VTCColor::GREEN);
@@ -161,7 +161,7 @@ class TerminalTableTest extends TestCase {
 	
 	function testAttributes() {
 		$this->model->load();
-		$this->table->setLayout(new TerminalTableColor());
+		$this->table->setLayout(new ExampleColor());
 		$longest = $this->table->getLongestStrings();
 		$vtc = new VTC();
 		$vtc->setAttributes(array(VTCAttribute::DIM, VTCAttribute::UNDERSCORE));

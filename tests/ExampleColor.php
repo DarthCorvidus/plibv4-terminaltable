@@ -1,5 +1,5 @@
 <?php
-class TerminalTableColor implements TerminalTableLayout {
+class ExampleColor implements TerminalTableLayout {
 	public function getCellAttr(int $col, int $row): array {
 		if($col==8 && $row == 0) {
 			return array(VTCAttribute::DIM, VTCAttribute::UNDERSCORE);
