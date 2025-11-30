@@ -2,7 +2,7 @@
 declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 require 'TerminalTableDemo.php';
-require 'TerminalTableJustify.php';
+require 'ExampleJustify.php';
 require 'TerminalTableColor.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -125,7 +125,7 @@ class TerminalTableTest extends TestCase {
 
 	
 	function testJustify() {
-		$this->table->setLayout(new TerminalTableJustify());
+		$this->table->setLayout(new ExampleJustify());
 		$txt = $this->getLinesJustify();
 		$csv = $this->table->getLines();
 		$this->assertEquals($txt, $csv);
@@ -133,7 +133,7 @@ class TerminalTableTest extends TestCase {
 	
 	
 	function testJustifySingleCellNoColor() {
-		$this->table->setLayout(new TerminalTableJustify());
+		$this->table->setLayout(new ExampleJustify());
 		$txt = $this->getLinesJustify();
 		$csv = $this->table->getLines();
 		$longest = $this->table->getLongestStrings();

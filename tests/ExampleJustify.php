@@ -1,5 +1,5 @@
 <?php
-class TerminalTableJustify implements TerminalTableLayout {
+class ExampleJustify implements TerminalTableLayout {
 	public function getCellAttr(int $col, int $row): array {
 		return array();
 	}
