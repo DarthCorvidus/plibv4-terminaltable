@@ -1,4 +1,5 @@
 <?php
+namespace plibv4\terminaltable;
 class TerminalTableDemo implements TerminalTableModel {
 	private $values = array();
 	private $title = array();

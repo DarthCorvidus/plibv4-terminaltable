@@ -4,6 +4,11 @@
  * @author Claus-Christoph Küthe <plibv4@vm01.telton.de>
  * @license LGPLv2.1
  */
+namespace plibv4\terminaltable;
+use plibv4\longeststring\LongestString;
+use plibv4\longeststring\LongestStrings;
+use plibv4\vtc\VTC;
+
 final class TerminalTable {
 	private TerminalTableModel $model;
 	private ?TerminalTableLayout $modelLayout = null;

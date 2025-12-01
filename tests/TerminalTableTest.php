@@ -1,6 +1,11 @@
 <?php
 declare(strict_types=1);
+namespace plibv4\terminaltable;
 use PHPUnit\Framework\TestCase;
+use plibv4\longeststring\LongestStrings;
+use plibv4\vtc\VTC;
+use plibv4\vtc\VTCAttribute;
+use plibv4\vtc\VTCColor;
 require 'TerminalTableDemo.php';
 require 'ExampleJustify.php';
 require 'ExampleColor.php';

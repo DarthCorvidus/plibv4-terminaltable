@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DarthCorvidus/plibv4-longeststring",
-                "reference": "ebadd8a36e8d23634369bcdb7cd0a659840fcef3"
+                "reference": "1d08b8284185eb7a657d0fdb0029cc21802f5135"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DarthCorvidus/plibv4-longeststring/zipball/ebadd8a36e8d23634369bcdb7cd0a659840fcef3",
-                "reference": "ebadd8a36e8d23634369bcdb7cd0a659840fcef3",
+                "url": "https://api.github.com/repos/DarthCorvidus/plibv4-longeststring/zipball/1d08b8284185eb7a657d0fdb0029cc21802f5135",
+                "reference": "1d08b8284185eb7a657d0fdb0029cc21802f5135",
                 "shasum": ""
             },
             "require-dev": {
@@ -42,7 +42,7 @@
                     "./vendor/bin/psalm --show-info=true --no-cache"
                 ]
             },
-            "time": "2024-12-05T20:29:57+00:00"
+            "time": "2025-11-30T18:13:33+00:00"
         },
         {
             "name": "plibv4/vtc",
@@ -50,12 +50,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DarthCorvidus/plibv4-vtc",
-                "reference": "f27742081d4f2534e6de77f3cce8103ce90037ad"
+                "reference": "a4a2cda8c590a0a0786b3440a5cd1b3c0ce8549f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DarthCorvidus/plibv4-vtc/zipball/f27742081d4f2534e6de77f3cce8103ce90037ad",
-                "reference": "f27742081d4f2534e6de77f3cce8103ce90037ad",
+                "url": "https://api.github.com/repos/DarthCorvidus/plibv4-vtc/zipball/a4a2cda8c590a0a0786b3440a5cd1b3c0ce8549f",
+                "reference": "a4a2cda8c590a0a0786b3440a5cd1b3c0ce8549f",
                 "shasum": ""
             },
             "require-dev": {
@@ -80,7 +80,7 @@
                     "./vendor/bin/psalm --show-info=true --no-cache"
                 ]
             },
-            "time": "2025-11-29T17:08:47+00:00"
+            "time": "2025-11-30T18:19:28+00:00"
         }
     ],
     "packages-dev": [
@@ -1864,12 +1864,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "24fb8443fca58946b9dcfcf96d4193175be59ef4"
+                "reference": "e4810261db718545ed1a64d021dc9ecba3dbd68d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/24fb8443fca58946b9dcfcf96d4193175be59ef4",
-                "reference": "24fb8443fca58946b9dcfcf96d4193175be59ef4",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/e4810261db718545ed1a64d021dc9ecba3dbd68d",
+                "reference": "e4810261db718545ed1a64d021dc9ecba3dbd68d",
                 "shasum": ""
             },
             "require": {
@@ -1915,7 +1915,7 @@
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
                 "source": "https://github.com/nikic/PHP-Parser/tree/master"
             },
-            "time": "2025-11-29T15:12:44+00:00"
+            "time": "2025-11-30T16:41:08+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -2184,7 +2184,6 @@
                 "rector/rector": "^0.13.9",
                 "vimeo/psalm": "^4.25"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2598,12 +2597,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "0f63f9041e29014dea3933b37e10097731356d56"
+                "reference": "3984de9ac21c44844b33d8a659fb15e38e9f2bd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0f63f9041e29014dea3933b37e10097731356d56",
-                "reference": "0f63f9041e29014dea3933b37e10097731356d56",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3984de9ac21c44844b33d8a659fb15e38e9f2bd2",
+                "reference": "3984de9ac21c44844b33d8a659fb15e38e9f2bd2",
                 "shasum": ""
             },
             "require": {
@@ -2701,7 +2700,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-11-21T07:03:51+00:00"
+            "time": "2025-11-30T15:22:36+00:00"
         },
         {
             "name": "psr/container",
@@ -4077,12 +4076,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "0bc0f45254b99c58d45a8fbf9fb955d46cbd1bb8"
+                "reference": "245d678a1f19846c113b02fffe50ce183631758a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/0bc0f45254b99c58d45a8fbf9fb955d46cbd1bb8",
-                "reference": "0bc0f45254b99c58d45a8fbf9fb955d46cbd1bb8",
+                "url": "https://api.github.com/repos/symfony/console/zipball/245d678a1f19846c113b02fffe50ce183631758a",
+                "reference": "245d678a1f19846c113b02fffe50ce183631758a",
                 "shasum": ""
             },
             "require": {
@@ -4167,7 +4166,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-11-27T13:27:24+00:00"
+            "time": "2025-11-29T12:03:55+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",

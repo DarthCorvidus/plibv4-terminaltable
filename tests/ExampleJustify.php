@@ -1,4 +1,7 @@
 <?php
+namespace plibv4\terminaltable;
+use plibv4\vtc\VTCAttribute;
+use plibv4\vtc\VTCColor;
 class ExampleJustify implements TerminalTableLayout {
 	public function getCellAttr(int $col, int $row): array {
 		return array();

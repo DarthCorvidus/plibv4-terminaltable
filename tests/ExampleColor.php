@@ -1,4 +1,8 @@
 <?php
+namespace plibv4\terminaltable;
+use plibv4\vtc\VTCAttribute;
+use plibv4\vtc\VTCcolor;
+
 class ExampleColor implements TerminalTableLayout {
 	public function getCellAttr(int $col, int $row): array {
 		if($col==8 && $row == 0) {
