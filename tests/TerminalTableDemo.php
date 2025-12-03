@@ -1,14 +1,15 @@
 <?php
 namespace plibv4\terminaltable;
 class TerminalTableDemo implements TerminalTableModel {
-	private $values = array();
 	private $title = array();
+	private Matrix $matrix;
 	function __construct() {
-		;
+		$this->matrix = new Matrix();
 	}
 
 	public function getCell($col, $row): string {
-		return $this->values[$row][$col];
+		//return $this->values[$row][$col];
+		return $this->matrix->get($row, $col);
 	}
 
 	public function getColumns(): int {
@@ -16,7 +17,7 @@ class TerminalTableDemo implements TerminalTableModel {
 	}
 
 	public function getRows(): int {
-		return count($this->values);
+		return $this->matrix->getRows();
 	}
 
 	public function getTitle($col): string {
@@ -28,7 +29,7 @@ class TerminalTableDemo implements TerminalTableModel {
 	}
 
 	public function load(): void {
-		$this->values = array();
+		$this->matrix->clear();
 		$this->title = array();
 		$handle = fopen(__DIR__."/csv.txt", "r");
 		$i=0;
@@ -38,7 +39,9 @@ class TerminalTableDemo implements TerminalTableModel {
 				$i++;
 				continue;
 			}
-			$this->values[] = $array;
+			$this->matrix->addRow($i-1, $array);
+			//$this->values[] = $array;
+			$i++;
 		}
 		fclose($handle);
 	}

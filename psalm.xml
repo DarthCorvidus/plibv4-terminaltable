@@ -13,6 +13,7 @@
 			<errorLevel type="suppress">
 				<!-- this is a class library, therefore some code is unused -->
 				<file name="src/TerminalTable.php" />
+				<file name="src/Matrix.php" />
 			</errorLevel>
 		</UnusedClass>
 	</issueHandlers>
