@@ -11,16 +11,14 @@
 	<issueHandlers>
 		<UnusedClass>
 			<errorLevel type="suppress">
-				<!-- this is a class library, therefore some code is unused -->
-				<file name="src/TerminalTable.php" />
-				<file name="src/Matrix.php" />
+				<file name="tests/MatrixTest.php" />
+				<file name="tests/TerminalTableTest.php" />
+				<file name="tests/TerminalTableDemoTest.php" />
 			</errorLevel>
 		</UnusedClass>
 	</issueHandlers>
     <projectFiles>
         <directory name="src" />
-        <ignoreFiles>
-            <directory name="vendor" />
-        </ignoreFiles>
+		<directory name="tests" />
     </projectFiles>
 </psalm>

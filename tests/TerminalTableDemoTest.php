@@ -13,26 +13,28 @@ use PHPUnit\Framework\TestCase;
  *
  * @author hm
  */
-class TerminalTableDemoTest extends TestCase {
-	private $model;
+final class TerminalTableDemoTest extends TestCase {
+	/** @psalm-suppress PropertyNotSetInConstructor */
+	private TerminalTableModel $model;
+	#[\Override]
 	function setUp(): void {
 		$this->model = new TerminalTableDemo();
 		$this->model->load();
 	}
 	
-	function testGetColumns() {
+	function testGetColumns(): void {
 		$this->assertEquals(10, $this->model->getColumns());
 	}
 	
-	function testGetRows() {
+	function testGetRows(): void {
 		$this->assertEquals(6, $this->model->getRows());
 	}
 	
-	function testGetCell() {
+	function testGetCell(): void {
 		$this->assertEquals("-rwxr--r--", $this->model->getCell(0, 4));
 	}
 	
-	function testGetTitle() {
+	function testGetTitle(): void {
 		$this->assertEquals("Links", $this->model->getTitle(1));
 	}
 

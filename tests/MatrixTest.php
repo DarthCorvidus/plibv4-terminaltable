@@ -3,8 +3,8 @@ declare(strict_types=1);
 namespace plibv4\terminaltable;
 use PHPUnit\Framework\TestCase;
 use OutOfBoundsException;
-class MatrixTest extends TestCase {
-	function testConstruct() {
+final class MatrixTest extends TestCase {
+	function testConstruct(): void {
 		$matrix = new Matrix();
 		$this->assertInstanceOf(Matrix::class, $matrix);
 		$this->assertSame(0, $matrix->getColumns());
@@ -71,7 +71,7 @@ class MatrixTest extends TestCase {
 		$this->assertSame("", $matrix->get($row, $column));
 	}
 
-	function oobProvider() {
+	function oobProvider(): array {
 		return [
 			[3, 6],
 			[4, 5],
