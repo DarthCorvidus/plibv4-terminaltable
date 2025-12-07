@@ -21,8 +21,8 @@
         "classmap": ["src/"]
     },
 	"require-dev": {
-		"vimeo/psalm": "6.x-dev",
-		"phpunit/phpunit": "9.6.x-dev"
+		"vimeo/psalm": "^6",
+		"phpunit/phpunit": "^9"
 	},
 	"scripts": {
 		"test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests",

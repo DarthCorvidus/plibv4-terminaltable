@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "783011acb6195bd7208047379a546391",
+    "content-hash": "d80e327b63a8c885ed75997c9e9637b4",
     "packages": [
         {
             "name": "plibv4/longeststring",
@@ -2597,12 +2597,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3984de9ac21c44844b33d8a659fb15e38e9f2bd2"
+                "reference": "945d0b7f346a084ce5549e95289962972c4272e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3984de9ac21c44844b33d8a659fb15e38e9f2bd2",
-                "reference": "3984de9ac21c44844b33d8a659fb15e38e9f2bd2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/945d0b7f346a084ce5549e95289962972c4272e5",
+                "reference": "945d0b7f346a084ce5549e95289962972c4272e5",
                 "shasum": ""
             },
             "require": {
@@ -2676,7 +2676,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.31"
             },
             "funding": [
                 {
@@ -2700,7 +2700,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-11-30T15:22:36+00:00"
+            "time": "2025-12-06T07:45:52+00:00"
         },
         {
             "name": "psr/container",
@@ -4965,12 +4965,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "2b0ff73c8bed091af231a0a80ac109126c92083a"
+                "reference": "286d85851a49f6b7621101a0d641766bf06f5f23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/2b0ff73c8bed091af231a0a80ac109126c92083a",
-                "reference": "2b0ff73c8bed091af231a0a80ac109126c92083a",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/286d85851a49f6b7621101a0d641766bf06f5f23",
+                "reference": "286d85851a49f6b7621101a0d641766bf06f5f23",
                 "shasum": ""
             },
             "require": {
@@ -5076,7 +5076,7 @@
                 "issues": "https://github.com/vimeo/psalm/issues",
                 "source": "https://github.com/vimeo/psalm"
             },
-            "time": "2025-10-15T16:48:19+00:00"
+            "time": "2025-12-07T12:53:33+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -5141,9 +5141,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "plibv4/vtc": 20,
-        "plibv4/longeststring": 20,
-        "vimeo/psalm": 20,
-        "phpunit/phpunit": 20
+        "plibv4/longeststring": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
