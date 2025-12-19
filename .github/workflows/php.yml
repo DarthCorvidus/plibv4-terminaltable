@@ -5,35 +5,42 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-permissions:
-  contents: read
+  workflow_dispatch:
 
 jobs:
   build:
-
-    runs-on: ubuntu-20.04
-
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.2', '8.3.16' ]
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      # needed because Psalm won't run with PHP 8.3.6 as supplied by Ubuntu;
+      # installs newer PHP version.
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer
 
-    #- name: Validate composer.json and composer.lock
-    #  run: composer validate --strict
+      #Get composer cache dir from composer
+      - name: Get Composer cache dir
+        id: composer-cache-dir
+        run: echo "dir=$(composer config cache-dir)" >> $GITHUB_OUTPUT
 
-    - name: Cache Composer packages
-      id: composer-cache
-      uses: actions/cache@v3
-      with:
-        path: vendor
-        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-php-
+      - name: Cache Composer downloads
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
-    - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+      - name: Run test suite
+        run: composer run-script testdox
 
-    - name: Run test suite
-      run: composer run-script testdox
+      - name: Run Psalm
+        run: composer run-script psalm
