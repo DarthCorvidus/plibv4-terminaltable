@@ -28,7 +28,11 @@
 	"scripts": {
 		"test": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests",
 		"testdox": "./vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox --colors=always tests",
+		"coverage": "phpdbg -qrr ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests --coverage-text",
+		"coverage-html": "phpdbg -qrr ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests --coverage-html coverage",
 		"psalm": "./vendor/bin/psalm --show-info=true --no-cache",
-		"psatest": "./vendor/bin/phpunit --bootstrap vendor/autoload.php tests && ./vendor/bin/psalm --show-info=true --no-cache"
+		"all": ["./vendor/bin/phpunit --bootstrap vendor/autoload.php tests",
+				"./vendor/bin/psalm --show-info=true --no-cache",
+				"phpdbg -qrr ./vendor/bin/phpunit --bootstrap vendor/autoload.php tests --coverage-text"]
 	}
 }
