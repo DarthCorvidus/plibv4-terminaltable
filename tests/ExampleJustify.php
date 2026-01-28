@@ -10,12 +10,12 @@ final class ExampleJustify implements TerminalTableLayout {
 
 	#[\Override]
 	public function getCellBack(int $col, int $row): VTCColor {
-		return VTCColor::RESET;
+		return VTCColor::NONE;
 	}
 
 	#[\Override]
 	public function getCellFore(int $col, int $row): VTCColor {
-		return VTCColor::RESET;
+		return VTCColor::NONE;
 	}
 	
 	#[\Override]

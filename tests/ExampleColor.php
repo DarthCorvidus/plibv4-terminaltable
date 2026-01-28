@@ -17,7 +17,7 @@ final class ExampleColor implements TerminalTableLayout {
 		if($col==8 && $row == 1) {
 			return VTCColor::GREEN;
 		}
-	return VTCColor::RESET;
+	return VTCColor::NONE;
 	}
 
 	#[\Override]
@@ -25,7 +25,7 @@ final class ExampleColor implements TerminalTableLayout {
 		if($col==8 && $row == 2) {
 			return VTCColor::GREEN;
 		}
-		return VTCColor::RESET;
+		return VTCColor::NONE;
 	}
 
 	#[\Override]
